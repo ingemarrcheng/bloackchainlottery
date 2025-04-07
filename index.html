@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Lottery</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Blockchain Lottery</h1>
+      <div id="connection-status">
+        <span id="network-name"></span>
+        <span id="account-address"></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="game-rules" class="card">
+        <h2>Game Rules</h2>
+        <details class="setup-guide">
+          <summary>🦊 First Time Setup: MetaMask & Test ETH</summary>
+          <div class="guide-content">
+            <h3>1. Install MetaMask</h3>
+            <ol>
+              <li>Visit the <a href="https://metamask.io/download/" target="_blank" rel="noopener">MetaMask website</a></li>
+              <li>Click "Install MetaMask" for your browser</li>
+              <li>Follow the installation prompts</li>
+              <li>Create a new wallet and securely store your recovery phrase</li>
+            </ol>
+            
+            <h3>2. Connect to Sepolia Network</h3>
+            <ol>
+              <li>Click the network dropdown at the top of MetaMask</li>
+              <li>Select "Show/hide test networks"</li>
+              <li>Enable test networks</li>
+              <li>Select "Sepolia" from the network list</li>
+            </ol>
+            
+            <h3>3. Get Test ETH</h3>
+            <ol>
+              <li>Copy your wallet address from MetaMask</li>
+              <li>Visit one of these Sepolia faucets:
+                <ul>
+                  <li><a href="https://sepoliafaucet.com" target="_blank" rel="noopener">Sepolia Faucet</a></li>
+                  <li><a href="https://faucet.sepolia.dev" target="_blank" rel="noopener">Sepolia Dev Faucet</a></li>
+                </ul>
+              </li>
+              <li>Paste your address and request test ETH</li>
+              <li>Wait a few minutes for the ETH to arrive</li>
+            </ol>
+            
+            <div class="warning-note">
+              <strong>Important:</strong> Never send real ETH to test network addresses! This is a test environment using test ETH only.
+            </div>
+          </div>
+        </details>
+
+        <p>Welcome to the Blockchain Lottery! Here's how it works:</p>
+        <ol>
+          <li>Enter the lottery by paying exactly 0.0001 ETH</li>
+          <li>Once the prize pool reaches 0.0002 ETH, a 1-minute countdown begins</li>
+          <li>When the countdown ends, a winner is automatically selected</li>
+          <li>The winner receives a fixed prize of 0.0002 ETH</li>
+          <li>A new round starts immediately after each draw</li>
+        </ol>
+        <p class="note">Note: This lottery runs on the Sepolia test network. Make sure your wallet is connected to Sepolia!</p>
+      </section>
+
+      <section id="lottery-info" class="card">
+        <h2>Lottery Status</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Status</h3>
+            <p id="lottery-status">Loading...</p>
+          </div>
+          <div class="info-item">
+            <h3>Entry Fee</h3>
+            <p id="entry-fee">Loading...</p>
+          </div>
+          <div class="info-item">
+            <h3>Total Bets</h3>
+            <p id="player-count">Loading...</p>
+          </div>
+          <div class="info-item">
+            <h3>Prize Pool</h3>
+            <p id="prize-pool">Loading...</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="countdown-section" class="card">
+        <div class="countdown-container">
+          <h3>Lucky Draw Countdown</h3>
+          <p id="countdown-timer">Loading...</p>
+        </div>
+      </section>
+
+      <section id="manager-section" class="card hidden">
+        <h2>Manager Controls</h2>
+        <div class="form-group">
+          <label for="funding-amount-input">Fund Contract (ETH)</label>
+          <input type="number" id="funding-amount-input" min="0.001" step="0.001" value="0.01">
+          <button id="fund-contract-btn" class="btn primary">Fund Contract</button>
+        </div>
+        <div class="button-group">
+          <button id="start-lottery-btn" class="btn primary">Start Lottery</button>
+          <button id="pick-winner-btn" class="btn secondary">Pick Winner</button>
+        </div>
+      </section>
+
+      <section id="player-section" class="card">
+        <h2>Enter Lottery</h2>
+        <p id="entry-instructions">Connect your wallet to enter the lottery.</p>
+        <button id="enter-lottery-btn" class="btn primary" disabled>Enter Lottery</button>
+      </section>
+
+      <section id="last-winner-section" class="card hidden">
+        <h2>Winner List</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Winner</h3>
+            <p id="last-winner-address">None yet</p>
+          </div>
+          <div class="info-item">
+            <h3>Prize Amount</h3>
+            <p id="last-prize-amount">0 ETH</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="notification" class="hidden">
+      <p id="notification-message"></p>
+      <button id="notification-close" class="btn small">×</button>
+    </div>
+
+    <div id="winner-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 Congratulations!</h2>
+        <p id="winner-message"></p>
+        <canvas id="confetti-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
