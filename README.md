@@ -1,4 +1,4 @@
-# 仆ching - Blockchain Lottery System
+# HKMU - Blockchain Lottery System
 
 ![Solidity](https://img.shields.io/badge/Solidity-%5E0.8.19-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
