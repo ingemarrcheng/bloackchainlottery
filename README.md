@@ -116,10 +116,6 @@ npm run dev
 - **Contract Not Found**: Verify the contract address in your configuration
 - **Network Issues**: Make sure MetaMask is connected to the Sepolia testnet
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
