@@ -19,7 +19,7 @@ A decentralized lottery system built on Ethereum that automatically selects winn
 ## 🏗️ Project Structure
 
 ```
-仆ching/
+blockching/
 ├── contracts/             # Solidity smart contracts
 │   └── Lottery.sol        # Main lottery contract with auto-draw functionality
 ├── scripts/               # Deployment scripts
@@ -45,8 +45,8 @@ A decentralized lottery system built on Ethereum that automatically selects winn
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/仆ching.git
-cd 仆ching
+git clone https://github.com/yourusername/blockchingching.git
+cd blockchingching
 ```
 
 2. Install dependencies:
